@@ -1,5 +1,6 @@
 import random
 from words import words
+from hangman_visual import lives_visual_dict
 import string 
 
 
@@ -30,7 +31,7 @@ def hangman():
         if user_letter in alphabet - used_letters:
             used_letters.add(user_letter)
             if user_letter in word_letters:
-                word_letters.remove(used_letters)
+                word_letters.remove(user_letter)
                 print('')        
             
             else:
