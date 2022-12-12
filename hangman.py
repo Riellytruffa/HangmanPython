@@ -1,5 +1,6 @@
 import random
 from words import words
+import string 
 
 def get_valid_word(words): 
     word = random.choice(words) 
@@ -10,7 +11,7 @@ def get_valid_word(words):
 
 def hangman(): 
     word = get_valid_word(words) 
-    word_letters= set(word) 
+    word_letters = set(word) 
     alphabet = set(string.ascii_uppercase) 
     used_letters = set()
 
@@ -19,11 +20,14 @@ def hangman():
         used_letters.add(user_letter)
         if user_letter in word_letters:
             word_letters.remove(used_letters)
+    
+    elif user_letter in used_letters:
+        print('You have already used that character. Please try again. ')
 
-elif user_letter in used_letters:
-    print('You have already used that')
+    else:
+        print('Invalid character. Please try again')
 
-user_input = input('Type something')
+user_input = input('Type something ')
 print(user_input)
 
 
