@@ -39,13 +39,13 @@ def hangman():
                 print('\nYour letter,',user_letter,'Letter is not in the word!')
     
         elif user_letter in used_letters:
-            print('\nYou have already used that character. Please try again.')  # User uses same character
+            print('\nYou have already used that character. Please try again with a new character.')  # User uses same character
 
         else:
             print('\nInvalid character. Please try again.') 
        
     if lives == 0:
-        print('You died, sorry. The word was', word)
+        print('You died, sorry :(. The word was', word)
     else:
          print('You guessed the word', word, '!!')
 
